@@ -116,13 +116,13 @@ body :is(h1,h2,h3,h4,p,span,a,button,input,output,label,strong,figcaption,footer
 .nav a,.small,.captionline,.archive-links,.step,.filters button{line-height:1.5}
 .archive::before,.archive::after{font-size:clamp(30px,6vw,76px)}
 .stage h1,.heading h1,.story-intro h1,.story-copy strong,.story-readout,.frame span,.year,.eyebrow,.mono,.school,.history-dial output,.transport output,.captionline{font-family:var(--hand)}.cover-frame span{display:none}.cover-frame img,.cover-frame[aria-pressed=false] img{filter:none;opacity:1}
-body:has(#home:not([hidden])){background:#f6ecd6 url("photos/background-wide.png") center 43% / cover no-repeat}
+body:has(#home:not([hidden])){background:#f6ecd6 url("photos/background-wide.jpg") center 43% / cover no-repeat}
 body:has(#home:not([hidden])) header{background:#f8f3e7e8}
 #home .archive{background:linear-gradient(180deg,#f8f3e7d6,#f8f3e738 33%,#f8f3e733 63%,#f8f3e7ee 83%);box-shadow:0 0 35px 22px #f8f3e740}
 body:has(#home:not([hidden])) footer{background:#f8f3e7eb;padding-inline:16px}
 @media(max-width:760px){body:has(#home:not([hidden])){background-position:center center}#home .archive{background:linear-gradient(180deg,#f8f3e7df,#f8f3e74d 40%,#f8f3e7eb 80%)}}
 body{isolation:isolate}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--paper) url("photos/background-wide.png") center var(--art-position,43%)/cover no-repeat;opacity:var(--art-opacity,.68)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--paper) url("photos/background-wide.jpg") center var(--art-position,43%)/cover no-repeat;opacity:var(--art-opacity,.68)}
 body[data-page=home]::before{opacity:0}
 body[data-page=history]{--art-position:56%}
 body[data-page=youth]{--art-position:71%}
@@ -270,7 +270,7 @@ const frames=[
  ['1956','学校创办',"photos/1.jpg",'#history/1956','anniversarySite'],
  ['1958–1973','早期办学',"photos/2.jpg",'#history/1958–1973','anniversarySite'],
  ['1980','开启本科教育',"photos/3.jpg",'#history/1980','anniversarySite'],
- ['2004','更名杭州电子科技大学',"photos/4.png",'#history/2004','anniversarySite'],
+ ['2004','更名杭州电子科技大学',"photos/4.jpg",'#history/2004','anniversarySite'],
  ['2026','校史剧《选择》',"photos/5.jpg",'#youth/组织','play']
 ];
 const strip=document.querySelector('.filmstrip');
