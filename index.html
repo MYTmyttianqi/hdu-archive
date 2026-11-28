@@ -152,7 +152,7 @@ body:not([data-page=home]) footer{background:#f8f3e7ee;padding-inline:16px}
 #quest .quest-shell{box-sizing:border-box;width:min(100%,740px);min-width:0}
 #quest .quest-question,#quest .quest-options,#quest-result{min-width:0;max-width:100%}
 #quest h1,#quest h2,#quest p{writing-mode:horizontal-tb;white-space:normal;overflow-wrap:break-word;word-break:normal}
-@media(max-width:560px){#quest .quest-shell{padding:16px}.quest-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.quest-options button{min-width:0;padding:6px 2px;white-space:nowrap}.quest-shell h1{font-size:32px}.quest-shell h2{font-size:21px}}</style></head>
+@media(max-width:560px){#quest .quest-shell{padding:16px}.quest-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.quest-options button{min-width:0;padding:6px 2px;white-space:nowrap}.quest-shell h1{font-size:32px}.quest-shell h2{font-size:21px}}.keepsake{margin:18px 0}.keepsake figcaption{font-size:14px;margin-top:8px;color:#36516c}#quest .keepsake img{position:static;max-width:100%;height:auto;box-shadow:3px 5px 12px #17365d26}#quest .quest-question{position:relative;padding:18px clamp(8px,3vw,26px);border:1px solid #ab9169;border-left:5px double #967f63;background:repeating-linear-gradient(0deg,transparent 0 23px,#836e4421 24px),linear-gradient(110deg,#e8d5ac,#faf0d9 70%,#dbc9a7);box-shadow:2px 4px 0 #9c84572e}#quest .quest-question h2{max-width:24em}.file-id{font:12px Georgia,serif;letter-spacing:.15em;color:#58452e}.quest-options button{transition:transform .16s ease,background .22s}.quest-options button:active{transform:translateY(2px) rotate(-1deg)}#quest .quest-options button[aria-pressed=true]{color:#803c32;border:2px double #994c3b;background:#f1dec6}.ink-proof{display:inline-block;padding:0 7px;margin-right:8px;border:3px double #964438;color:#873d31;transform:rotate(-5deg);animation:stamp .25s ease-out both}@keyframes stamp{from{opacity:0;transform:scale(1.35) rotate(-10deg)}}@media(prefers-reduced-motion:reduce){#quest *{animation:none!important;transition:none!important}}.afterword{border-top:1px solid #a49276;margin-top:1rem;padding-top:.5rem}</style></head>
 <body>
 <header><div class="top"><a class="brand" href="#home"><span class="mark" aria-hidden="true">H</span><span lang="en">HDU Archive</span></a><nav class="nav" aria-label="主导航"><a href="#home" lang="en">Index</a><a href="#history" lang="en">Timeline</a><a href="#youth" lang="en">Youth</a><a href="#sources" lang="en">Sources</a></nav><span class="school">HDU / HANGZHOU</span></div></header>
 <main>
@@ -169,7 +169,7 @@ body:not([data-page=home]) footer{background:#f8f3e7ee;padding-inline:16px}
   <div class="story-chapters"></div>
  </div>
  <div class="story-end"><a href="#history/2026">继续浏览校史时间线</a><a href="#home">返回档案首页</a></div>
-</section><section class="view" id="quest" hidden><div class="quest-shell"><a class="quest-back" href="#home">← 返回书架</a><p class="eyebrow">HDU ARCHIVE / 1956—2026</p><h1>修复校史档案</h1><p>三份档案缺了一个年份。沿线索查阅校史，把它们补回去。</p><div id="quest-progress"></div><div id="quest-card"></div><div id="quest-result" hidden><h2>三份档案已修复</h2><p>保存你的校史记忆卡，或回到书架翻阅原图。</p><button id="quest-save">保存记忆卡 PNG</button><a href="#home">回到书架</a><button id="quest-reset">重新挑战</button><canvas id="quest-poster" width="900" height="1240" role="img" aria-label="杭电校史记忆卡"></canvas></div></div></section>
+</section><section class="view" id="quest" hidden><div class="quest-shell"><a class="quest-back" href="#home">← 返回书架</a><p class="eyebrow">HDU ARCHIVE / 1956—2026</p><h1>修复校史档案</h1><p>三份档案缺了一个年份。沿线索查阅校史，把它们补回去。</p><div id="quest-progress"></div><div id="quest-card"></div><div id="quest-result" hidden><h2>三份档案已修复</h2><p>保存你的校史记忆卡，或回到书架翻阅原图。</p><button id="quest-save">保存记忆卡 PNG</button><a href="#home">回到书架</a><button id="quest-reset">重新挑战</button><figure class="keepsake"><img id="quest-poster" width="900" height="1240" alt="修复纪念票，记录1956、1980与2004三次校史节点"><figcaption>手机可长按上图保存纪念票</figcaption></figure><div class="afterword"><a href="#youth/科创">接着读 · 从电子工业到青年科创 →</a><a href="#sources">核对校史出处 →</a></div></div></div></section>
 </main><footer><span>杭电记忆 · 校史与青春档案</span><span>基于杭州电子科技大学公开资料整理</span></footer>
 <script>
 const urls = {
@@ -434,7 +434,7 @@ function paintQuest(){
  qResult.hidden=qStep<questItems.length;
  if(!qResult.hidden){qCard.innerHTML='';drawQuestPoster();return;}
  const item=questItems[qStep];
- qCard.innerHTML='<article class="quest-question"><p>第 '+(qStep+1)+' 份 / 共 3 份</p><h2>'+item.question+'</h2><div class="quest-options">'+item.options.map(x=>'<button data-answer="'+x+'">'+x+' 年</button>').join('')+'</div><p id="quest-feedback" role="status"></p><a href="#history/'+item.clue+'">查阅校史线索</a><button class="quest-next" hidden>继续</button></article>';
+ qCard.innerHTML='<article class="quest-question"><p class="file-id">HDU · FOLIO 0'+(qStep+1)+' / 03</p><h2>'+item.question+'</h2><div class="quest-options">'+item.options.map(x=>'<button data-answer="'+x+'">'+x+' 年</button>').join('')+'</div><p id="quest-feedback" role="status"></p><a href="#history/'+item.clue+'">查阅校史线索</a><button class="quest-next" hidden>继续</button></article>';
 }
 qCard.addEventListener('click',e=>{
  const btn=e.target.closest('button');
@@ -446,29 +446,33 @@ qCard.addEventListener('click',e=>{
  if(btn.dataset.answer!==item.year){feedback.textContent='这份档案还差一点。查阅校史线索后再试。';return;}
  qSolved=true;
  btn.setAttribute('aria-pressed','true');
- feedback.textContent='已修复。'+item.note;
+ feedback.innerHTML='<span class="ink-proof">已校录</span>'+item.note;
  qProgress.children[qStep].className='done';
  const next=qCard.querySelector('.quest-next');
  next.hidden=false;
  next.textContent=qStep===2?'查看纪念卡':'下一份档案';
 });
 function drawQuestPoster(){
- const canvas=document.querySelector('#quest-poster');
+ const canvas=document.createElement('canvas');canvas.width=900;canvas.height=1240;
  const ctx=canvas.getContext('2d');
  ctx.fillStyle='#f5ead3';ctx.fillRect(0,0,900,1240);
- ctx.strokeStyle='#17365d';ctx.lineWidth=3;ctx.strokeRect(43,43,814,1154);
- ctx.fillStyle='#17365d';ctx.textAlign='center';ctx.font='36px Georgia';ctx.fillText('HDU ARCHIVE · 1956—2026',450,140);
- ctx.font='bold 70px Microsoft YaHei';ctx.fillText('杭电校史记忆卡',450,270);
- ctx.font='30px Microsoft YaHei';ctx.fillText('三份校史档案已修复',450,350);
- questItems.forEach((item,i)=>{
-  const y=505+i*170;
-  ctx.font='bold 65px Georgia';ctx.fillText(item.year,450,y);
-  ctx.font='28px Microsoft YaHei';ctx.fillText(item.note,450,y+52,730);
- });
- ctx.font='24px Microsoft YaHei';ctx.fillText('杭电记忆 · 校史互动纪念',450,1100);
+
+ const render=(photo)=>{
+ ctx.fillStyle='#f6ebd4';ctx.fillRect(0,0,900,1240);
+ ctx.fillStyle='#183955';ctx.fillRect(0,0,900,432);
+ if(photo){ctx.save();ctx.globalAlpha=.48;const crop=Math.min(photo.width/900,photo.height/432);ctx.drawImage(photo,(photo.width-900*crop)/2,(photo.height-432*crop)/2,900*crop,432*crop,0,0,900,432);ctx.restore()}
+ ctx.fillStyle='#10283acc';ctx.fillRect(0,238,900,194);
+ ctx.fillStyle='#fff0d5';ctx.font='25px Georgia';ctx.fillText('HDU   /   ARCHIVE SERIES',64,288);ctx.font='64px KaiTi,serif';ctx.fillText('杭电校史修复手记',60,382);
+ ctx.strokeStyle='#a9926a';ctx.lineWidth=3;ctx.strokeRect(24,24,852,1192);ctx.strokeRect(31,31,838,1178);
+ questItems.forEach((item,i)=>{const y=539+i*154;ctx.fillStyle='#973f2e';ctx.font='57px Georgia';ctx.fillText(item.year,68,y);ctx.fillStyle='#173653';ctx.font='28px KaiTi,serif';ctx.fillText(item.note,70,y+54,760);ctx.fillStyle='#b6a37d';ctx.fillRect(68,y+80,759,1)});
+ ctx.strokeStyle='#9a8059';ctx.setLineDash([9,9]);ctx.beginPath();ctx.moveTo(28,984);ctx.lineTo(872,984);ctx.stroke();ctx.setLineDash([]);
+ ctx.fillStyle='#173653';ctx.font='36px KaiTi,serif';ctx.fillText('七十周年 · 修复留存联',66,1070);ctx.font='24px Georgia';ctx.fillText('1956 — 2026    /    HDU ARCHIVE',66,1130);
+ ctx.save();ctx.translate(754,1089);ctx.rotate(-.12);ctx.strokeStyle='#984e3e';ctx.strokeRect(-58,-56,116,112);ctx.strokeRect(-52,-50,104,100);ctx.fillStyle='#984e3e';ctx.font='32px KaiTi,serif';ctx.textAlign='center';ctx.fillText('校史',0,-2);ctx.fillText('留存',0,33);ctx.restore();
+ document.querySelector('#quest-poster').src=canvas.toDataURL('image/png');
+ };render(null);const photo=new Image();photo.onload=()=>render(photo);photo.src='photos/1.jpg';
 }
 document.querySelector('#quest-reset').onclick=()=>{qStep=0;qSolved=false;paintQuest();qCard.querySelector('button').focus();};
-document.querySelector('#quest-save').onclick=()=>{const a=document.createElement('a');a.href=document.querySelector('#quest-poster').toDataURL('image/png');a.download='杭电校史记忆卡.png';a.click();};
+document.querySelector('#quest-save').onclick=()=>{const a=document.createElement('a');a.href=document.querySelector('#quest-poster').src;a.download='杭电校史记忆卡.png';a.click();};
 paintQuest();
 </script></body></html>
 
