@@ -147,11 +147,16 @@ body:not([data-page=home]) footer{background:#f8f3e7ee;padding-inline:16px}
 .story-images img.is-active{opacity:.83}
 .story-screen{background:#111b3159}
 @media(max-width:760px){body::before{background-position:center var(--art-position,50%)}}
-</style></head>
+.quest-shell{max-width:740px;margin:28px auto;padding:clamp(20px,5vw,56px);background:#faf4e6f5;border:1px solid #28476b42;box-shadow:0 20px 70px #1d304827;color:#17365d}.quest-shell h1{font-size:clamp(34px,6vw,62px);line-height:1.06;margin:8px 0 16px}.quest-shell p{line-height:1.55;font-size:17px}.quest-shell a,.quest-shell button,.quest-launch{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;color:#17365d}.quest-shell button,.quest-launch{border:1px solid #28476b66;background:#faf4e6;cursor:pointer}.archive-links .quest-launch{background:#193d70;color:#fff7e4;text-decoration:none;padding:8px 18px;border-radius:3px}.quest-back{margin-left:-14px}.quest-shell .eyebrow{margin-top:20px}.quest-question{border-top:1px solid #28476b44;padding-top:12px;animation:record-turn .35s ease both}.quest-options{display:flex;flex-wrap:wrap;gap:8px}.quest-options button{min-width:80px}.quest-options button:hover,.quest-options button[aria-pressed=true]{background:#dce6ec}#quest-progress{display:flex;gap:4px;margin:20px 0}#quest-progress span{flex:1;border-top:4px solid #28476b33;padding:6px 0}#quest-progress .done{border-color:#193d70}#quest-feedback{min-height:2em;margin:8px 0}.quest-next{margin:8px 0}#quest-poster{display:block;width:min(100%,360px);height:auto;margin:18px 0 0}.quest-shell #quest-save{background:#193d70;color:#fff7e4}body[data-page=quest]{--art-position:60%}@media(max-width:560px){.top{gap:4px;flex-direction:column}.top .nav{max-width:100%;overflow:auto;gap:4px}.top .nav a{min-height:44px;display:inline-flex;align-items:center;padding-inline:9px}.top .school,.archive::before,.archive::after{display:none}.archive-links{gap:4px}.archive-links a,.archive-links button{min-height:44px;padding:6px 9px}.filmstrip{min-height:210px}.frame{width:clamp(89px,28vw,125px);transform:translateX(calc(var(--offset)*clamp(36px,13vw,64px))) translateY(calc(var(--distance)*9px)) rotateY(calc(var(--offset)*-20deg)) scale(calc(1 - var(--distance)*.15));}.captionline{font-size:16px}.quest-shell{margin:14px auto}}
+#quest{display:block;width:100%;min-width:0;writing-mode:horizontal-tb}
+#quest .quest-shell{box-sizing:border-box;width:min(100%,740px);min-width:0}
+#quest .quest-question,#quest .quest-options,#quest-result{min-width:0;max-width:100%}
+#quest h1,#quest h2,#quest p{writing-mode:horizontal-tb;white-space:normal;overflow-wrap:break-word;word-break:normal}
+@media(max-width:560px){#quest .quest-shell{padding:16px}.quest-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.quest-options button{min-width:0;padding:6px 2px;white-space:nowrap}.quest-shell h1{font-size:32px}.quest-shell h2{font-size:21px}}</style></head>
 <body>
 <header><div class="top"><a class="brand" href="#home"><span class="mark" aria-hidden="true">H</span><span lang="en">HDU Archive</span></a><nav class="nav" aria-label="主导航"><a href="#home" lang="en">Index</a><a href="#history" lang="en">Timeline</a><a href="#youth" lang="en">Youth</a><a href="#sources" lang="en">Sources</a></nav><span class="school">HDU / HANGZHOU</span></div></header>
 <main>
-<section class="view" id="home"><div class="archive"><div class="archive-bg"></div><div class="archive-shade"></div><div class="stage"><div><p class="eyebrow">杭州电子科技大学 · 1956—2026</p><h1 lang="en">HDU <span>Archive</span></h1><p>选一卷档案，翻看学校创办、更名与七十周年的照片。也可以连续播放，沿时间顺序浏览。</p><div class="actions"><a id="chapter" class="button" href="#history/1956">阅读这一章</a><a class="button secondary" href="#youth">青春杭电</a></div></div><figure style="margin:0"><button class="photo" type="button" aria-label="放大当前档案照片"><img alt=""><span class="inspect">放大照片</span></button><figcaption class="captionline" aria-live="polite"></figcaption><div class="archive-links"><button type="button" id="enlarge-tape">查看原图</button><a id="archive-chapter" href="#history/1956">阅读这一章</a><a href="#youth">青春杭电</a><a href="#story">七十年校史 · 影像专题</a></div><div class="transport" aria-label="档案播放控制"><button class="step" type="button" id="play">播放</button><input type="range" id="tape-seek" min="0" max="4" step="1" value="0" aria-label="档案进度"><output id="counter"></output></div></figure></div><div class="film"><div class="film-head"><span class="filmtitle">档案带 · 点击或拖动换片</span><div><button type="button" class="step" data-step="-1" aria-label="上一张">‹</button> <button type="button" class="step" data-step="1" aria-label="下一张">›</button></div></div><div class="filmstrip" aria-label="选择档案照片"></div></div></div><div class="tiles home-links"><a class="tile" href="#youth/组织"><h2>校团委与基层团组织</h2><p>了解青马学院和第二课堂。</p></a><a class="tile" href="#youth/实践"><h2>社会实践与志愿服务</h2><p>走进基层，了解杭电青年的服务与调研。</p></a><a class="tile" href="#youth/科创"><h2>青年科创</h2><p>从“挑战杯”了解杭电青年科创。</p></a></div></section>
+<section class="view" id="home"><div class="archive"><div class="archive-bg"></div><div class="archive-shade"></div><div class="stage"><div><p class="eyebrow">杭州电子科技大学 · 1956—2026</p><h1 lang="en">HDU <span>Archive</span></h1><p>选一卷档案，翻看学校创办、更名与七十周年的照片。也可以连续播放，沿时间顺序浏览。</p><div class="actions"><a id="chapter" class="button" href="#history/1956">阅读这一章</a><a class="button secondary" href="#youth">青春杭电</a></div></div><figure style="margin:0"><button class="photo" type="button" aria-label="放大当前档案照片"><img alt=""><span class="inspect">放大照片</span></button><figcaption class="captionline" aria-live="polite"></figcaption><div class="archive-links"><a class="quest-launch" href="#quest">修复校史档案</a><button type="button" id="enlarge-tape">查看原图</button><a id="archive-chapter" href="#history/1956">阅读这一章</a><a href="#youth">青春杭电</a><a href="#story">七十年校史 · 影像专题</a></div><div class="transport" aria-label="档案播放控制"><button class="step" type="button" id="play">播放</button><input type="range" id="tape-seek" min="0" max="4" step="1" value="0" aria-label="档案进度"><output id="counter"></output></div></figure></div><div class="film"><div class="film-head"><span class="filmtitle">档案带 · 点击或拖动换片</span><div><button type="button" class="step" data-step="-1" aria-label="上一张">‹</button> <button type="button" class="step" data-step="1" aria-label="下一张">›</button></div></div><div class="filmstrip" aria-label="选择档案照片"></div></div></div><div class="tiles home-links"><a class="tile" href="#youth/组织"><h2>校团委与基层团组织</h2><p>了解青马学院和第二课堂。</p></a><a class="tile" href="#youth/实践"><h2>社会实践与志愿服务</h2><p>走进基层，了解杭电青年的服务与调研。</p></a><a class="tile" href="#youth/科创"><h2>青年科创</h2><p>从“挑战杯”了解杭电青年科创。</p></a></div></section>
 <dialog class="photo-dialog" aria-label="档案照片大图"><form method="dialog"><button class="step">关闭</button></form><img alt=""><div><p></p><a target="_blank" rel="noopener">查看来源</a></div></dialog>
 <section class="view" id="history" hidden><div class="heading"><p class="eyebrow">SCHOOL HISTORY</p><h1 lang="en">Timeline</h1><p>选择年份，查看杭电从创办到建校七十周年的关键节点。</p></div><div class="history-dial"><label for="history-dial">沿年代浏览</label><input id="history-dial" type="range" min="0" step="1" value="0"><output id="history-year"></output></div><div class="timeline"><nav class="years" aria-label="校史年份"></nav><article class="panel" id="milestone" aria-live="polite"></article></div></section>
 <section class="view youth" id="youth" hidden><div class="heading"><p class="eyebrow">HDU YOUTH</p><h1 lang="en">HDU Youth</h1><p>共青团杭州电子科技大学委员会是中国共产主义青年团在杭电的基层组织，承担组织、引领、服务青年和维护青年权益等职责。</p></div><div class="filters" aria-label="筛选青年专题"></div><div class="stories"></div></section>
@@ -164,7 +169,8 @@ body:not([data-page=home]) footer{background:#f8f3e7ee;padding-inline:16px}
   <div class="story-chapters"></div>
  </div>
  <div class="story-end"><a href="#history/2026">继续浏览校史时间线</a><a href="#home">返回档案首页</a></div>
-</section></main><footer><span>杭电记忆 · 校史与青春档案</span><span>基于杭州电子科技大学公开资料整理</span></footer>
+</section><section class="view" id="quest" hidden><div class="quest-shell"><a class="quest-back" href="#home">← 返回书架</a><p class="eyebrow">HDU ARCHIVE / 1956—2026</p><h1>修复校史档案</h1><p>三份档案缺了一个年份。沿线索查阅校史，把它们补回去。</p><div id="quest-progress"></div><div id="quest-card"></div><div id="quest-result" hidden><h2>三份档案已修复</h2><p>保存你的校史记忆卡，或回到书架翻阅原图。</p><button id="quest-save">保存记忆卡 PNG</button><a href="#home">回到书架</a><button id="quest-reset">重新挑战</button><canvas id="quest-poster" width="900" height="1240" role="img" aria-label="杭电校史记忆卡"></canvas></div></div></section>
+</main><footer><span>杭电记忆 · 校史与青春档案</span><span>基于杭州电子科技大学公开资料整理</span></footer>
 <script>
 const urls = {
  report:"https://xxgk.hdu.edu.cn/_upload/article/files/dc/19/3ce49da947cc96e56028f9a968c2/be41df06-b755-474b-8b35-10796ee9e331.pdf", intro:'https://www.hdu.edu.cn/659/main.htm', history:'https://www.hdu.edu.cn/_t30/664/list.htm',
@@ -211,7 +217,7 @@ document.querySelector('.filters').addEventListener('click',e=>{const filter=e.t
 let current;
 function render(){
  const [requested,part] = location.hash.slice(1).split('/').map(value=>{try{return decodeURIComponent(value)}catch{return ''}});
- const page=['home','history','youth','sources','story'].includes(requested)?requested:'home';
+ const page=['home','history','youth','sources','story','quest'].includes(requested)?requested:'home';
  document.querySelectorAll('.view').forEach(view=>view.hidden=view.id!==page);
  document.querySelectorAll('.nav a').forEach(a=>a.getAttribute('href')==='#'+page?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
  if(page==='history'){
@@ -225,7 +231,7 @@ function render(){
   record.classList.remove('record-turn');
   void record.offsetWidth;
   record.classList.add('record-turn');
-  document.querySelector('#milestone').innerHTML='<span class="year">'+year+'</span><h2>'+title+'</h2><p>'+body+'</p>'+link(key,'查阅校方原文');
+  document.querySelector('#milestone').innerHTML='<span class="year">'+year+'</span><h2>'+title+'</h2><p>'+body+'</p>'+link(key,'查阅校方原文')+'<p><a href="#quest">返回校史档案修复</a></p>';
  }
  if(page==='youth'){
   const active=filters.includes(part)?part:'全部';
@@ -414,7 +420,58 @@ function enterStory(){
 }
 window.addEventListener('hashchange',enterStory);
 enterStory();
+const questItems=[
+ {question:'杭州航空工业财经学校创办于哪一年？',year:'1956',options:['1956','1958','1961'],clue:'1956',note:'1956年3月，学校在文三路创办。'},
+ {question:'学校何时改建为杭州电子工业学院？',year:'1980',options:['1973','1980','2000'],clue:'1980',note:'1980年，学校经国务院批准建立杭州电子工业学院。'},
+ {question:'杭州电子科技大学的现名何时启用？',year:'2004',options:['2000','2003','2004'],clue:'2004',note:'2004年5月，学校启用杭州电子科技大学校名。'}
+];
+const qCard=document.querySelector('#quest-card');
+const qProgress=document.querySelector('#quest-progress');
+const qResult=document.querySelector('#quest-result');
+let qStep=0,qSolved=false;
+function paintQuest(){
+ qProgress.innerHTML=questItems.map((_,i)=>'<span class="'+(i<qStep||(i===qStep&&qSolved)?'done':'')+'">档案 '+(i+1)+'</span>').join('');
+ qResult.hidden=qStep<questItems.length;
+ if(!qResult.hidden){qCard.innerHTML='';drawQuestPoster();return;}
+ const item=questItems[qStep];
+ qCard.innerHTML='<article class="quest-question"><p>第 '+(qStep+1)+' 份 / 共 3 份</p><h2>'+item.question+'</h2><div class="quest-options">'+item.options.map(x=>'<button data-answer="'+x+'">'+x+' 年</button>').join('')+'</div><p id="quest-feedback" role="status"></p><a href="#history/'+item.clue+'">查阅校史线索</a><button class="quest-next" hidden>继续</button></article>';
+}
+qCard.addEventListener('click',e=>{
+ const btn=e.target.closest('button');
+ if(!btn)return;
+ if(btn.matches('.quest-next')&&qSolved){qStep++;qSolved=false;paintQuest();const next=qCard.querySelector('button')||document.querySelector('#quest-save');next.focus();return;}
+ if(qSolved||!btn.dataset.answer)return;
+ const item=questItems[qStep];
+ const feedback=qCard.querySelector('#quest-feedback');
+ if(btn.dataset.answer!==item.year){feedback.textContent='这份档案还差一点。查阅校史线索后再试。';return;}
+ qSolved=true;
+ btn.setAttribute('aria-pressed','true');
+ feedback.textContent='已修复。'+item.note;
+ qProgress.children[qStep].className='done';
+ const next=qCard.querySelector('.quest-next');
+ next.hidden=false;
+ next.textContent=qStep===2?'查看纪念卡':'下一份档案';
+});
+function drawQuestPoster(){
+ const canvas=document.querySelector('#quest-poster');
+ const ctx=canvas.getContext('2d');
+ ctx.fillStyle='#f5ead3';ctx.fillRect(0,0,900,1240);
+ ctx.strokeStyle='#17365d';ctx.lineWidth=3;ctx.strokeRect(43,43,814,1154);
+ ctx.fillStyle='#17365d';ctx.textAlign='center';ctx.font='36px Georgia';ctx.fillText('HDU ARCHIVE · 1956—2026',450,140);
+ ctx.font='bold 70px Microsoft YaHei';ctx.fillText('杭电校史记忆卡',450,270);
+ ctx.font='30px Microsoft YaHei';ctx.fillText('三份校史档案已修复',450,350);
+ questItems.forEach((item,i)=>{
+  const y=505+i*170;
+  ctx.font='bold 65px Georgia';ctx.fillText(item.year,450,y);
+  ctx.font='28px Microsoft YaHei';ctx.fillText(item.note,450,y+52,730);
+ });
+ ctx.font='24px Microsoft YaHei';ctx.fillText('杭电记忆 · 校史互动纪念',450,1100);
+}
+document.querySelector('#quest-reset').onclick=()=>{qStep=0;qSolved=false;paintQuest();qCard.querySelector('button').focus();};
+document.querySelector('#quest-save').onclick=()=>{const a=document.createElement('a');a.href=document.querySelector('#quest-poster').toDataURL('image/png');a.download='杭电校史记忆卡.png';a.click();};
+paintQuest();
 </script></body></html>
+
 
 
 
